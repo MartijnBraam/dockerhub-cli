@@ -14,4 +14,11 @@ python3 -m dockerhub --tgz alpine /var/lib/vz/templates/alpine
 # Download rootfs for systemd-nspawn
 python3 -m dockerhub alpine /tmp/example
 sudo systemd-nspawn -D /tmp/example
+
+# Download specific version (debian experimental)
+python3 -m dockerhub debian:experimental /tmp/deb9
+
+# Download user repository (latest and develop)
+python3 -m dockerhub gogs/gogs /tmp/gogs
+python3 -m dockerhub gogs/gogs:develop /tmp/gogs-dev
 ```
